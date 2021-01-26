@@ -10,7 +10,10 @@ import {
 import PropTypes from 'prop-types';
 import './App.css';
 
-const searchClient = algoliasearch('B1G2GM9NG0', 'aadef574be1f9252bb48d4ea09b5cfe5');
+const searchClient = algoliasearch(
+  'B1G2GM9NG0',
+  'aadef574be1f9252bb48d4ea09b5cfe5'
+);
 
 class App extends Component {
   render() {

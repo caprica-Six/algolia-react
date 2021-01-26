@@ -43,6 +43,9 @@ export default class App extends Component {
     searchState: PropTypes.object,
     resultsState: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     onSearchStateChange: PropTypes.func,
+    createURL: PropTypes.func,
+    indexName: PropTypes.string,
+    searchClient: PropTypes.object,
   };
 
   render() {
@@ -53,6 +56,9 @@ export default class App extends Component {
         resultsState={this.props.resultsState}
         onSearchStateChange={this.props.onSearchStateChange}
         searchState={this.props.searchState}
+        createURL={this.props.createURL}
+        onSearchParameters={this.props.onSearchParameters}
+        {...this.props}
       >
         <Configure hitsPerPage={10} />
         <header>
@@ -61,19 +67,16 @@ export default class App extends Component {
         </header>
         <content>
           <menu>
-            <RefinementList attribute="category" />
+            <div className="menu">
+              <RefinementList attribute="category" />
+            </div>
           </menu>
-          <Hits hitComponent={HitComponent} />
+          <div className="results">
+            <Hits hitComponent={HitComponent} />
+          </div>
         </content>
         <footer>
           <Pagination />
-          <div>
-            See{' '}
-            <a href="https://github.com/algolia/react-instantsearch/tree/master/packages/react-instantsearch/examples/next-app">
-              source code
-            </a>{' '}
-            on github
-          </div>
         </footer>
       </InstantSearch>
     );

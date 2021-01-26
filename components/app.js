@@ -9,7 +9,7 @@ import {
   Pagination,
   InstantSearch,
 } from 'react-instantsearch-dom';
-import { Container, Row, Col } from 'reactstrap';
+import { indexName, searchClient } from './instantsearch';
 
 const HitComponent = ({ hit }) => (
   <div className="hit">
@@ -38,56 +38,43 @@ HitComponent.propTypes = {
   hit: PropTypes.object,
 };
 
-export default class extends Component {
+export default class App extends Component {
   static propTypes = {
     searchState: PropTypes.object,
     resultsState: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     onSearchStateChange: PropTypes.func,
-    createURL: PropTypes.func,
-    indexName: PropTypes.string,
-    searchClient: PropTypes.object,
   };
 
   render() {
     return (
       <InstantSearch
-        searchClient={this.props.searchClient}
+        indexName={indexName}
+        searchClient={searchClient}
         resultsState={this.props.resultsState}
         onSearchStateChange={this.props.onSearchStateChange}
         searchState={this.props.searchState}
-        createURL={this.props.createURL}
-        indexName={this.props.indexName}
-        onSearchParameters={this.props.onSearchParameters}
-        {...this.props}
       >
-        <Configure hitsPerPage={12} />
-
-        <Container>
-          <Row>
-            <Col>
-              <SearchBox />
-            </Col>
-          </Row>
-        </Container>
-
-        <Row>
-          <Col>
-            <div className="menu">
-              <RefinementList attribute="categories" />
-            </div>
-          </Col>
-          <Col>
-            <div className="results">
-              <Hits hitComponent={HitComponent} />
-            </div>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col>
-            <Pagination />
-          </Col>
-        </Row>
+        <Configure hitsPerPage={10} />
+        <header>
+          <h1>React InstantSearch + Next.Js</h1>
+          <SearchBox />
+        </header>
+        <content>
+          <menu>
+            <RefinementList attribute="category" />
+          </menu>
+          <Hits hitComponent={HitComponent} />
+        </content>
+        <footer>
+          <Pagination />
+          <div>
+            See{' '}
+            <a href="https://github.com/algolia/react-instantsearch/tree/master/packages/react-instantsearch/examples/next-app">
+              source code
+            </a>{' '}
+            on github
+          </div>
+        </footer>
       </InstantSearch>
     );
   }

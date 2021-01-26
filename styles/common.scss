@@ -1,0 +1,17 @@
+// Common styles
+html {
+    box-sizing: border-box;
+    font-size: 14px;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+body {
+    -ms-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimiz eLegibility;
+}
+
+main {
+    min-height: 100vh;
+}

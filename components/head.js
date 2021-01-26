@@ -34,7 +34,7 @@ export const Head = props => (
       rel="stylesheet"
       href="https://unpkg.com/react-instantsearch-theme-algolia@3.0.0/style.min.css"
     />
-    <link rel="stylesheet" href="../static/instantsearch.css" />
+    <link rel="stylesheet" href="../instantsearch.css" />
   </NextHead>
 );
 

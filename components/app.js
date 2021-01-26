@@ -11,24 +11,28 @@ import {
 } from 'react-instantsearch-dom';
 import { indexName, searchClient } from './instantsearch';
 
+import styles from './app.module.scss';
+
 const HitComponent = ({ hit }) => (
-  <div className="hit">
-    <div>
-      <div className="hit-picture">
-        <img src={`${hit.image}`} />
-      </div>
-    </div>
-    <div className="hit-content">
+  <div className={styles.container}>
+    <div className="hit">
       <div>
-        <Highlight attribute="name" hit={hit} />
-        <span> - ${hit.price}</span>
-        <span> - {hit.rating} stars</span>
+        <div className="hit-picture">
+          <img src={`${hit.image}`} />
+        </div>
       </div>
-      <div className="hit-type">
-        <Highlight attribute="type" hit={hit} />
-      </div>
-      <div className="hit-description">
-        <Highlight attribute="description" hit={hit} />
+      <div className="hit-content">
+        <div>
+          <Highlight attribute="name" hit={hit} />
+          <span> - ${hit.price}</span>
+          <span> - {hit.rating} stars</span>
+        </div>
+        <div className="hit-type">
+          <Highlight attribute="type" hit={hit} />
+        </div>
+        <div className="hit-description">
+          <Highlight attribute="description" hit={hit} />
+        </div>
       </div>
     </div>
   </div>
@@ -68,7 +72,7 @@ export default class App extends Component {
         <content>
           <menu>
             <div className="menu">
-              <RefinementList attribute="category" />
+              <RefinementList attribute="categories" />
             </div>
           </menu>
           <div className="results">

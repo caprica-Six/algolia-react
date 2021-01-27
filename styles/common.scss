@@ -1,4 +1,7 @@
-// Common styles
+@import '../styles/variables.scss';
+
+
+// Common 
 html {
     box-sizing: border-box;
     font-size: 14px;
@@ -10,6 +13,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimiz eLegibility;
+    background: $white;
 }
 
 main {

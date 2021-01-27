@@ -11,7 +11,7 @@ import {
 } from 'react-instantsearch-dom';
 import { indexName, searchClient } from './instantsearch';
 
-import styles from './app.module.scss';
+import styles from './App.module.scss';
 
 const HitComponent = ({ hit }) => (
   <div className={styles.container}>

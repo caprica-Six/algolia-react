@@ -14,25 +14,23 @@ import { indexName, searchClient } from './instantsearch';
 import styles from './App.module.scss';
 
 const HitComponent = ({ hit }) => (
-  <div className={styles.container}>
-    <div className="hit">
-      <div>
-        <div className="hit-picture">
-          <img src={`${hit.image}`} />
-        </div>
+  <div className="hit">
+    <div>
+      <div className="hit-picture">
+        <img src={`${hit.image}`} />
       </div>
-      <div className="hit-content">
-        <div>
-          <Highlight attribute="name" hit={hit} />
-          <span> - ${hit.price}</span>
-          <span> - {hit.rating} stars</span>
-        </div>
-        <div className="hit-type">
-          <Highlight attribute="type" hit={hit} />
-        </div>
-        <div className="hit-description">
-          <Highlight attribute="description" hit={hit} />
-        </div>
+    </div>
+    <div className="hit-content">
+      <div>
+        <Highlight attribute="name" hit={hit} />
+        <span> - ${hit.price}</span>
+        <span> - {hit.rating} stars</span>
+      </div>
+      <div className="hit-type">
+        <Highlight attribute="type" hit={hit} />
+      </div>
+      <div className="hit-description">
+        <Highlight attribute="description" hit={hit} />
       </div>
     </div>
   </div>
@@ -66,7 +64,7 @@ export default class App extends Component {
       >
         <Configure hitsPerPage={10} />
         <header>
-          <h1>React InstantSearch + Next.Js</h1>
+          <h1 className={styles.title}>React InstantSearch + Next.Js</h1>
           <SearchBox />
         </header>
         <content>

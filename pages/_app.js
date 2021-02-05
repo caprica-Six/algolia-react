@@ -1,6 +1,6 @@
 import React from 'react';
-
 import Head from '../components/head';
+import 'instantsearch.css/themes/algolia.css';
 import '../styles/styles.scss';
 
 // eslint-disable-next-line react/prop-types

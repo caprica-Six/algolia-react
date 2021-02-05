@@ -1,9 +1,8 @@
-import React from 'react';
-import Head from '../components/head';
-import 'instantsearch.css/themes/algolia.css';
+import Head from 'next/head';
+import 'instantsearch.css/themes/reset.css';
 import '../styles/styles.scss';
+import Layout from '../components/Layout';
 
-// eslint-disable-next-line react/prop-types
 function MyApp({ Component, pageProps }) {
   return (
     <>
@@ -14,8 +13,9 @@ function MyApp({ Component, pageProps }) {
           key="viewport"
         />
       </Head>
-
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   );
 }

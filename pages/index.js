@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { Head, App } from '../components';
+import Router from 'next/router';
+import Head from 'next/head';
+import qs from 'qs';
+
+import { App } from '../components';
 import {
   findResultsState,
   indexName,
   searchClient,
 } from '../components/instantsearch';
-import Router from 'next/router';
-import qs from 'qs';
 
 const updateAfter = 700;
 
@@ -43,22 +45,20 @@ export default class Home extends Component {
 
   render() {
     return (
-      <div>
+      <>
         <Head title="Home" />
         <div className="container">
           <h1>The Awesome Instant search demo</h1>
         </div>
 
-        <div>
-          {this.state && this.state.resultsState && this.state.searchState && (
-            <App
-              resultsState={this.state.resultsState}
-              onSearchStateChange={this.onSearchStateChange}
-              searchState={this.state.searchState}
-            />
-          )}
-        </div>
-      </div>
+        {this.state && this.state.resultsState && this.state.searchState && (
+          <App
+            resultsState={this.state.resultsState}
+            onSearchStateChange={this.onSearchStateChange}
+            searchState={this.state.searchState}
+          />
+        )}
+      </>
     );
   }
 }

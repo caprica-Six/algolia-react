@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "algoliasearch": "4.3.0",
+    "bootstrap": "^4.6.0",
     "cross-env": "^7.0.3",
     "instantsearch.css": "^7.4.5",
     "loadash": "^1.0.0",

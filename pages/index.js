@@ -45,6 +45,10 @@ export default class Home extends Component {
     return (
       <div>
         <Head title="Home" />
+        <div className="container">
+          <h1>The Awesome Instant search demo</h1>
+        </div>
+
         <div>
           {this.state && this.state.resultsState && this.state.searchState && (
             <App

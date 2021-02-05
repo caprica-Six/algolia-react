@@ -63,23 +63,21 @@ export default class App extends Component {
         {...this.props}
       >
         <Configure hitsPerPage={10} />
-        <header>
-          <h1 className={styles.title}>React InstantSearch + Next.Js</h1>
-          <SearchBox />
-        </header>
-        <content>
-          <menu>
-            <div className="menu">
-              <RefinementList attribute="categories" />
-            </div>
-          </menu>
-          <div className="results">
-            <Hits hitComponent={HitComponent} />
+
+        <SearchBox />
+
+        <aside>
+          <div className="menu">
+            <RefinementList attribute="categories" />
           </div>
-        </content>
-        <footer>
+        </aside>
+        <div className="results">
+          <Hits hitComponent={HitComponent} />
+        </div>
+
+        <div className="pagination">
           <Pagination />
-        </footer>
+        </div>
       </InstantSearch>
     );
   }

@@ -1,5 +1,5 @@
 @import '../styles/variables.scss';
-
+@import './vendor/instasearch.scss';
 
 // Common 
 html {
@@ -19,4 +19,3 @@ body {
 main {
     min-height: 100vh;
 }
-

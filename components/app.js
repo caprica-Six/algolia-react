@@ -15,11 +15,10 @@ import styles from './App.module.scss';
 
 const HitComponent = ({ hit }) => (
   <div className="hit">
-    <div>
-      <div className="hit-picture">
-        <img src={`${hit.image}`} />
-      </div>
+    <div className="hit-picture">
+      <img src={`${hit.image}`} />
     </div>
+
     <div className="hit-content">
       <div>
         <Highlight attribute="name" hit={hit} />
